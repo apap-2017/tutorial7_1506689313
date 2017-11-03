@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="header">
+	<link rel="stylesheet" href="/css/bootstrap.min.css"/>
+	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="/datatables/datatables.css"/>
+  	<script src="/datatables/datatables.js"></script>
+  	<script>
+	  	$(document).ready(function(){
+	  	    $('#student_table').DataTable();
+	  	});
+  	</script>
+	<title th:text="${page_title}"></title>
+</head>
+<body>
+	<nav th:fragment="navbar" class="navbar navbar-dark navbar-inverse">
+		<div class="container">
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>                        
+		      </button>
+		      <a class="navbar-brand" href="#">SIMAHASISWA</a>
+		    </div>
+		    <div class="collapse navbar-collapse" id="myNavbar">
+		      <ul class="nav navbar-nav navbar-right">
+		        <li><a href="/">Home</a></li>
+		        <li><a href="/student/viewall">Daftar Mahasiswa</a></li>
+		        <li><a href="/student/add">Tambah Mahasiswa</a></li>
+		      </ul>
+		    </div>
+		  </div>
+	</nav>
+
+	<div th:fragment="footer">
+		<hr />
+		<h4>Mata Kuliah APAP</h4>
+	</div>
+</body>
+</html>
