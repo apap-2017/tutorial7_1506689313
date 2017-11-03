@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="fragments/fragment :: header">
+        <title>View All Students</title>
+    </head>
+    <body>
+    
+    <nav th:replace="fragments/fragment :: navbar"></nav>
+ 
+	<div class="container">
+		<div class="well"><h1>All Courses</h1></div>
+	</div>
+	
+	<div class="container">
+		<table id="student_table" class="table table-fit table-striped">
+			<thead>
+				<tr>
+		 			<th>No</th>
+		  			<th>Course ID</th>
+		  			<th>Name</th>
+		  			<th>Credits</th>
+	 			</tr>
+			</thead>
+			
+			<tbody>
+				<div th:each="course, iterationStatus: ${courses}" th:class="${iterationStatus.odd}?'odd'">
+					<tr>
+						<td th:text="${iterationStatus.count}">No</td>
+						<td th:text="${course.idCourse}"></td>
+						<td th:text="${course.name}"></td>
+						<td th:text="${course.credits}"></td>
+					</tr>
+				</div>
+			</tbody>
+			
+		</table>
+	</div>
+</body>
+</html>

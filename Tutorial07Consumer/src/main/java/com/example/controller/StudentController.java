@@ -143,14 +143,4 @@ public class StudentController
     	
     	return "success-update";
     }
-    
-    //view course detail
-    @RequestMapping(value="/course/view/{idCourse}")
-    public String viewCourse (Model model, @PathVariable(value="idCourse") String id_course) {
-    	CourseModel course = studentDAO.viewCourse(id_course);
-    	model.addAttribute("course", course);
-    	model.addAttribute("page_title", "View Course Detail");
-    	
-    	return "course";
-    }
 }
